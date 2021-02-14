@@ -50,6 +50,8 @@ class ProductItem extends HTMLElement {
 			}
 		}
 
+		product.appendChild(button);
+
 		const linkElem = document.createElement('link');
 		linkElem.setAttribute('rel', 'stylesheet');
 		linkElem.setAttribute('href', 'styles/styles.css');
