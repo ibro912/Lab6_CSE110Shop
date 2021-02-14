@@ -11,9 +11,9 @@ async function fetching()
     let response = await fetch('https://fakestoreapi.com/products');
 
 	let products = await response.json();
-  	if(!localStorage.get(prods))
+  	if(!window.localStorage.get('prods'))
   	{
-		window.localStorage.setItem(prods, products.stringify());
+		window.localStorage.setItem('prods', products.stringify());
 	}
     else
     {
