@@ -10,7 +10,7 @@ async function fetching()
 {
     let response = await fetch('https://fakestoreapi.com/products');
 
-	let products = await response.json();
+	var products = await response.json();
   	if(!window.localStorage.getItem('prods'))
   	{
 		window.localStorage.setItem('prods', JSON.stringify(products));
@@ -20,3 +20,10 @@ async function fetching()
         products = JSON.parse(window.localStorage.getItem('products'));
     }
 }
+
+
+products.foreach(function(item)
+{
+    let product = new ProductItem(item);
+    document.getElementById('product-list').appendChild(product);
+});
