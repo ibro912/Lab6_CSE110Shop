@@ -21,7 +21,7 @@ async function fetching()
     }
 
 
-    products.foreach(function(item)
+    products.forEach(function(item)
     {
     let product = new ProductItem(item);
     document.getElementById('product-list').appendChild(product);
