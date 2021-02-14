@@ -30,8 +30,25 @@ class ProductItem extends HTMLElement {
 
 		product.appendChild(price);
 
-		const button = ducoment.createElement('button');
+		const button = document.createElement('button');
+		button.textContent = 'Add to Cart';
 
+		button.onclick = function()
+		{
+			let cartCount = document.getElementById('cart-count');
+			if(!window.localStorage.getItem('id' + item['id']))
+			{
+				window.localStorage.setItem('id' + item['id'], item);
+				button.textContent = 'Remove from Cart';
+				cartCount.textContent = parseInt(cartCount.textContent) + 1;
+			}
+			else
+			{
+				window.localStorage.removeItem('id' + item['id']);
+				button.textContent = 'Add to Cart';
+				cartCount.textContent = parseInt(cartCount.textContent) - 1;
+			}
+		}
 
 		const linkElem = document.createElement('link');
 		linkElem.setAttribute('rel', 'stylesheet');
