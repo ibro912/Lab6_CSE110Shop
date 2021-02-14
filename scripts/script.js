@@ -32,8 +32,9 @@ async function fetching()
             cartCount++;
         }
 
-        document.getElementById('cart-count').textContent = cartCount;
     });
+
+    document.getElementById('cart-count').textContent = cartCount;
 }
 
 
