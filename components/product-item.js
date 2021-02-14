@@ -11,16 +11,19 @@ class ProductItem extends HTMLElement {
 		product.setAttribute('class', 'product');
 
 		const image = document.createElement('img');
+		image.src = item['image'];
 		
 		product.appendChild(image);
 
 		const title = document.createElement('p');
 		title.setAttribute('class', 'title');
+		title.textContent = item['title'];
 
 		product.appendChild(title);
 
 		const price = document.createElement('p');
 		price.setAttribute('class', 'price');
+		price.textContent = item['price'];
 
 		product.appendChild(price);
 
