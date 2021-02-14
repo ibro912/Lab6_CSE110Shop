@@ -19,11 +19,13 @@ async function fetching()
     {
         products = JSON.parse(window.localStorage.getItem('products'));
     }
+
+
+    products.foreach(function(item)
+    {
+    let product = new ProductItem(item);
+    document.getElementById('product-list').appendChild(product);
+    });
 }
 
 
-products.foreach(function(item)
-{
-    let product = new ProductItem(item);
-    document.getElementById('product-list').appendChild(product);
-});
