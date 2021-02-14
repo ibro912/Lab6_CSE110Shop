@@ -14,6 +14,7 @@ class ProductItem extends HTMLElement {
 		image.setAttribute('width', 200);
 		image.setAttribute('max-height', 300);
 		image.src = item['image'];
+		image.alt = item['title'];
 		
 		product.appendChild(image);
 
@@ -28,6 +29,9 @@ class ProductItem extends HTMLElement {
 		price.textContent = item['price'];
 
 		product.appendChild(price);
+
+		const button = ducoment.createElement('button');
+
 
 		const linkElem = document.createElement('link');
 		linkElem.setAttribute('rel', 'stylesheet');
