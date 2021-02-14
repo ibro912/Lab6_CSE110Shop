@@ -9,7 +9,6 @@ window.addEventListener('DOMContentLoaded', () => {
 async function fetching()
 {
     let response = await fetch('https://fakestoreapi.com/products');
-
 	var products = await response.json();
   	if(!window.localStorage.getItem('prods'))
   	{
@@ -20,11 +19,10 @@ async function fetching()
         products = JSON.parse(window.localStorage.getItem('prods'));
     }
 
-
+    let cartCount = 0;
     products.forEach(function(item)
     {
         let product = new ProductItem(item);
-        let cartCount = 0;
         document.getElementById('product-list').appendChild(product);
 
         if(window.localStorage.getItem('id' + item['id']))
