@@ -1,7 +1,7 @@
 // product-item.js
 
 class ProductItem extends HTMLElement {
-	constructor()
+	constructor(item)
 	{
 		super();
 
