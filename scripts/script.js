@@ -13,7 +13,7 @@ async function fetching()
 	let products = await response.json();
   	if(!window.localStorage.getItem('prods'))
   	{
-		window.localStorage.setItem('prods', products.stringify());
+		window.localStorage.setItem('prods', JSON.stringify(products));
 	}
     else
     {
