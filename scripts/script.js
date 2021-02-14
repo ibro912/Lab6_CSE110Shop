@@ -17,7 +17,7 @@ async function fetching()
 	}
     else
     {
-        products = JSON.parse(window.localStorage.getItem('products'));
+        products = JSON.parse(window.localStorage.getItem('prods'));
     }
 
 
