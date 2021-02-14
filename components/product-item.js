@@ -11,6 +11,7 @@ class ProductItem extends HTMLElement {
 		product.setAttribute('class', 'product');
 
 		const image = document.createElement('img');
+		image.setAttribute('width', 200);
 		image.src = item['image'];
 		
 		product.appendChild(image);
