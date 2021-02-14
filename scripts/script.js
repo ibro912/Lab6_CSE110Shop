@@ -23,8 +23,16 @@ async function fetching()
 
     products.forEach(function(item)
     {
-    let product = new ProductItem(item);
-    document.getElementById('product-list').appendChild(product);
+        let product = new ProductItem(item);
+        let cartCount = 0;
+        document.getElementById('product-list').appendChild(product);
+
+        if(window.localStorage.getItem('id' + item['id']))
+        {
+            cartCount++;
+        }
+
+        document.getElementById('cart-count').textContent = cartCount;
     });
 }
 

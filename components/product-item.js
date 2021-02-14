@@ -31,8 +31,14 @@ class ProductItem extends HTMLElement {
 		product.appendChild(price);
 
 		const button = document.createElement('button');
-		button.textContent = 'Add to Cart';
-
+		if(!window.localStorage.getItem('id' + item['id']))
+		{
+			button.textContent = 'Add to Cart';
+		}
+		else
+		{
+			button.textContent = 'Remove from Cart';
+		}
 		button.onclick = function()
 		{
 			let cartCount = document.getElementById('cart-count');
