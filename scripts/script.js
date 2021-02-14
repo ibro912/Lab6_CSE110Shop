@@ -2,8 +2,13 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 	//fetch request
-  
-	let response = await fetch('https://fakestoreapi.com/products');
+    fetching();
+	
+});
+
+async function fetching()
+{
+    let response = await fetch('https://fakestoreapi.com/products');
 
 	let products = await response.json();
   	if(!localStorage.get(prods))
@@ -14,4 +19,4 @@ window.addEventListener('DOMContentLoaded', () => {
     {
         products = JSON.parse(window.localStorage.getItem('products'));
     }
-});
+}
